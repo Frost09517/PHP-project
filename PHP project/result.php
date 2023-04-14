@@ -1,29 +1,84 @@
 <html>
-<style>
-    table, th, td {
-        border:1px solid black;
-    }
-</style>
 <body>
-<h2><b>Licence Result</b></h2>
+<style>
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    }
 
-<table style="width:100%">
-    <tr>
-        <th>id</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Result</th>
-    </tr>
-    <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-    </tr>
-    <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-    </tr>
-</table>
+    .header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+    }
+
+    .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+    }
+
+    .nav-items a {
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+</style>
+</body>
+<header class="header">
+    <a class="logo">Driving Licence Result</a>
+    <nav class="nav-items">
+        <a href="home.php">Home</a>
+    </nav>
+</header>
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "licence_data";
+$connection = mysqli_connect($host, $username, $password, $database);
+if (!$connection){
+    echo "Failure";
+}else{
+    $query= "SELECT * From `info`";
+    echo "<table border='1'>
+
+<tr>
+
+<th>Id</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Result</th>
+
+</tr>";
+
+
+    while($row = mysql_fetch_array($query))
+
+    {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['result'] . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+    mysql_close($connection);
+}
+
+?>
+
 </body>
 </html>
+

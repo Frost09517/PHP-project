@@ -73,7 +73,6 @@
 <header class="header">
     <a class="logo">Driving Licence</a>
     <nav class="nav-items">
-        <a href="register_page.php">Sign Out</a>
         <a href="licence_form.php">Form</a>
         <a href="result.php">Result</a>
     </nav>

@@ -113,9 +113,10 @@
 </head>
 <body>
 <header class="header">
-    <a class="logo">Driving Licence</a>
+    <a class="logo">Driving Licence Form</a>
     <nav class="nav-items">
         <a href="result.php">Result</a>
+        <a href="home.php">Home</a>
     </nav>
 </header>
     <form method="post" action="database2.php" enctype="multipart/form-data">
@@ -129,7 +130,7 @@
         <input type ="text" name=ctzno placeholder="Enter Citizenship number"><br>
 
         <label for="email"><b>Email:</b></label><br>
-        <input type="email" name="email" placeholder="Enter your Email"><<br>
+        <input type="text" name="email" placeholder="Enter your Email"><br>
 
         <label for="gender"><b>Gender:</b></label>
         <select id="gender" class="dropbtn">
